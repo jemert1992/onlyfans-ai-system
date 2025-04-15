@@ -43,6 +43,8 @@ def home():
         <title>OnlyFans AI Communication System</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <style>
             body { padding-top: 20px; padding-bottom: 40px; }
             .message { border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 5px; }
@@ -331,16 +333,19 @@ def home():
             </footer>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            // Tab navigation functionality
+            // Wait for document to be fully loaded
             document.addEventListener('DOMContentLoaded', function() {
+                console.log('DOM fully loaded');
+                
+                // Tab navigation functionality
                 const navLinks = document.querySelectorAll('#main-nav .nav-link');
                 const tabContents = document.querySelectorAll('.tab-content');
                 
                 navLinks.forEach(link => {
                     link.addEventListener('click', function(e) {
                         e.preventDefault();
+                        console.log('Tab clicked:', this.getAttribute('data-tab'));
                         
                         // Remove active class from all links and tabs
                         navLinks.forEach(l => l.classList.remove('active'));
@@ -357,6 +362,7 @@ def home():
                 const filterButton = document.getElementById('filter-button');
                 if (filterButton) {
                     filterButton.addEventListener('click', function() {
+                        console.log('Filter button clicked');
                         const messageInput = document.getElementById('message-input');
                         const message = messageInput.value.trim();
                         
@@ -382,6 +388,7 @@ def home():
                                 riskLevel = 'high-risk';
                             }
                             
+                            console.log('Message risk level:', riskLevel);
                             filterResult.classList.add(riskLevel);
                             
                             if (riskLevel === 'safe') {
@@ -409,6 +416,7 @@ def home():
                 }
                 
                 function updateResponsePreview() {
+                    console.log('Updating response preview');
                     const flirtiness = parseInt(document.getElementById('flirtiness').value);
                     const friendliness = parseInt(document.getElementById('friendliness').value);
                     const formality = parseInt(document.getElementById('formality').value);
@@ -437,6 +445,7 @@ def home():
                 if (presetButtons.length > 0) {
                     presetButtons.forEach(button => {
                         button.addEventListener('click', function() {
+                            console.log('Preset button clicked:', this.getAttribute('data-preset'));
                             presetButtons.forEach(btn => btn.classList.remove('active'));
                             this.classList.add('active');
                             
@@ -459,6 +468,8 @@ def home():
                         });
                     });
                 }
+                
+                console.log('All event listeners attached');
             });
         </script>
     </body>
