@@ -1,0 +1,122 @@
+/* Custom styles for OnlyFans AI Communication System */
+
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Card styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+}
+
+/* Message styling */
+.message-container {
+    border-left: 4px solid #007bff;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: #f8f9fa;
+    border-radius: 0 5px 5px 0;
+}
+
+.message-container.high-risk {
+    border-left-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.message-container.low-risk {
+    border-left-color: #ffc107;
+    background-color: #fffdf8;
+}
+
+.message-container.safe {
+    border-left-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.message-content {
+    margin-bottom: 10px;
+}
+
+.message-footer {
+    font-size: 0.85rem;
+    color: #6c757d;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Response styling */
+.response-container {
+    border-left: 4px solid #6f42c1;
+    padding: 10px 15px;
+    margin: 10px 0 15px 20px;
+    background-color: #f9f8ff;
+    border-radius: 0 5px 5px 0;
+}
+
+.response-container.automated {
+    border-left-color: #17a2b8;
+    background-color: #f8fdff;
+}
+
+/* Style settings */
+.style-slider {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.style-preview {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+}
+
+/* Dashboard stats */
+.stat-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Login and Register pages */
+.auth-container {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
